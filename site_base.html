@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{{ title }}</title>
+    <link href="/static/css/site_base.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body class="body">
+<div class="body_inner">
+    <header class="header">
+        <div class="box inner_header CLR">
+            <div class="site_name">
+                <h3>{{ title }}</h3>
+            </div>
+
+            <div class="search_head">
+                <form action="" target="_blank">
+
+                    <input type="text" autocomplete="off"
+                           placeholder="Search by Name or Code" name="search"/>
+                </form>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="section ">
+
+        <div class="container box">
+            <div class="container_inner CLR">
+                <div class="text_container">
+                    <div id="main">
+                        <div>
+                            <h3>Get values from today's Bhav Copy </h3>
+                            <p>
+                                <span>What is Bhav Copy????</span>
+
+                                Bhav Copy contains the details of open price, high price, low, close and volume of every
+                                scrip traded on the exchange on that day. It can also contain more details like
+                                turnover, trades, etc.
+                                Bhavcopy is the file which contains all the information about various scrips being
+                                traded on exchange.
+                                There are different bhavcopy for different types of exchange and market.
+                                In NSE, there is different bhavcopy for Quities, FNO, Commodties, etc.
+                                Similarly, In BSE, the bhavcopy contains prices of various scrips on any particular day.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_container">
+                    <div id="main_">
+                        <div class="entry_container act transition">
+                            <h3 class="CLR">Top entries from the Bhav Copy
+                                <span>*sorted by highset SC_CODE values.</span>
+                            </h3>
+                            <div>
+
+                                <header>
+                                    <div data-id="1" title="Sort Entries by the SC_CODE">
+                                        <a class="sort_by">Code</a></div>
+                                    <div data-id="2" title="Sort Entries by the SC_NAME">
+                                        <a class="sort_by">Name</a>
+                                    </div>
+                                    <div data-id="3" title="Sort Entries by the OPEN values">
+                                        <a class="sort_by">Open</a>
+                                    </div>
+                                    <div data-id="4" title="Sort Entries by the HIGH values">
+                                        <a class="sort_by" >High</a>
+                                    </div>
+                                    <div data-id="5" title="Sort Entries by the LOW values">
+                                        <a class="sort_by" >Low</a>
+                                    </div>
+                                    <div data-id="6" title="Sort Entries by the CLOSE values">
+                                        <a class="sort_by">Close</a>
+                                    </div>
+                                </header>
+                                <div style="margin-top: 20px;"></div>
+                                {% for value in data %}
+                                <div id="row_item" style="display: table-row;">
+                                    <div style="display: table-cell">{{ value.SC_CODE }}</div>
+                                    <div style="display: table-cell">{{ value.SC_NAME }}</div>
+                                    <div style="display: table-cell">{{ value.OPEN }}</div>
+                                    <div style="display: table-cell">{{ value.HIGH }}</div>
+                                    <div style="display: table-cell">{{ value.LOW }}</div>
+                                    <div style="display: table-cell">{{ value.CLOSE }}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="search_result_page transition">
+                            <!--<h3>Ajax Entries</h3>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="loader_div">
+        <div class="loader"></div>
+    </div>
+
+</div>
+<script src="/static/js/jquery-3.1.1.min.js" type="application/javascript"></script>
+<script src="/static/js/main.js" type="application/javascript"></script>
+</body>
+</html>

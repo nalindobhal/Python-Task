@@ -1,0 +1,30 @@
+<header>
+    <div data-id="1" title="Sort Entries by the SC_CODE">
+        <a class="sort_by">Code</a></div>
+    <div data-id="2" title="Sort Entries by the SC_NAME">
+        <a class="sort_by">Name</a>
+    </div>
+    <div data-id="3" title="Sort Entries by the OPEN values">
+        <a class="sort_by">Open</a>
+    </div>
+    <div data-id="4" title="Sort Entries by the HIGH values">
+        <a class="sort_by">High</a>
+    </div>
+    <div data-id="5" title="Sort Entries by the LOW values">
+        <a class="sort_by">Low</a>
+    </div>
+    <div data-id="6" title="Sort Entries by the CLOSE values">
+        <a class="sort_by">Close</a>
+    </div>
+</header>
+<div style="margin-top: 20px;"></div>
+{% for value in data %}
+<div id="row_item" style="display: table-row;">
+    <div style="display: table-cell">{{ value.SC_CODE }}</div>
+    <div style="display: table-cell">{{ value.SC_NAME }}</div>
+    <div style="display: table-cell">{{ value.OPEN }}</div>
+    <div style="display: table-cell">{{ value.HIGH }}</div>
+    <div style="display: table-cell">{{ value.LOW }}</div>
+    <div style="display: table-cell">{{ value.CLOSE }}</div>
+</div>
+{% endfor %}
